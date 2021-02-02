@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik',sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    background: salmon;
+}
+.face{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgb(190, 10, 160);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.face::before{
+    content:'';
+    position: absolute;
+    top: 180px;
+    width: 150px;
+    height: 70px;
+    border-bottom-left-radius: 70px;
+    border-bottom-right-radius: 70px;
+    transition: 0.5s;
+}
+.face:hover::before{
+    top: 210px;
+    width: 150px;
+    height: 20px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.eyes{
+    position: relative;
+    top: -40px;
+    display: flex;
+}
+.eye{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: block;
+    background: white;
+    margin: 15px;
+    border-radius: 50%;
+}
+.eye::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    transform:translate(-50%,-50%);
+    width: 40px;
+    height: 40px;
+    background: green;
+    border-radius: 50%;  
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
+    grid-template-rows:minmax(100px, auto);
+    margin: 40px;
+    grid-auto-flow: dense;
+    grid-gap:10px;
+}
+.box{        
+    background: rgb(228, 5, 142); /*FICA DE OLHO AQUI*/
+    padding: 20px;
+    display: grid;
+    font-size: 20px;
+    place-items: center;
+    text-align: center;
+    color: #fff;
+    transition: 0.5s;
+}
+.box:hover{
+    background: #b512c4;
+    color: black;
+}
+.box img{
+    position: relative;
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+.container .box :nth-child(1){
+    grid-column: span 1;
+    grid-row: span 2;
+}
